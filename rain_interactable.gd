@@ -30,13 +30,30 @@ func _mouse_enter():
 func _mouse_exit():
 	mouse_inside = false
 
-func _input(event):
-	if event is InputEventScreenTouch and mouse_inside:
+func _input(event: InputEvent):
+	if pos_inside(event.position):
+		print(name, ', _input(event), event = ', event)
+	
+	if event is InputEventScreenTouch and pos_inside(event.position):
 		is_moved_by_finger = event.pressed
 	
 	if event is InputEventScreenDrag:
 		if is_moved_by_finger:
 			global_position = event.position
+
+func pos_inside(pos: Vector2) -> bool:
+	var space_state = get_world_2d().direct_space_state
+	
+	var query = PhysicsPointQueryParameters2D.new()
+	query.position = pos
+	query.collide_with_bodies = true
+	
+	var results = space_state.intersect_point(query)
+	for result in results:
+		if result.rid == self.get_rid():
+			return true
+	
+	return false
 
 func get_all_sounds(directory_path: String) -> Array[AudioStreamOggVorbis]:
 	var output : Array[AudioStreamOggVorbis]
