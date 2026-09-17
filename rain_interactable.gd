@@ -5,9 +5,38 @@ class_name RainInteractable
 
 var all_sounds : Array[AudioStreamOggVorbis]
 
+var is_moved_by_finger : bool = false
+
+var mouse_inside : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	all_sounds = get_all_sounds(raindrop_sfx_directory)
+	
+	#input_event.connect(_on_input_event)
+
+#func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int):
+	##print(name, ', _input_event(viewport, event, shape_idx), viewport = ', viewport, ' event = ', event, ' shape_idx = ', shape_idx)
+	#
+	#if event is InputEventScreenTouch:
+		#is_moved_by_finger = event.pressed
+	#
+	#if event is InputEventScreenDrag:
+		#if is_moved_by_finger:
+			#global_position = event.position
+
+func _mouse_enter():
+	mouse_inside = true
+func _mouse_exit():
+	mouse_inside = false
+
+func _input(event):
+	if event is InputEventScreenTouch and mouse_inside:
+		is_moved_by_finger = event.pressed
+	
+	if event is InputEventScreenDrag:
+		if is_moved_by_finger:
+			global_position = event.position
 
 func get_all_sounds(directory_path: String) -> Array[AudioStreamOggVorbis]:
 	var output : Array[AudioStreamOggVorbis]

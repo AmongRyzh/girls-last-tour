@@ -73,6 +73,7 @@ autostart = true
 
 [node name="Helmet" type="AnimatableBody2D" parent="." unique_id=680556947]
 position = Vector2(141, 561)
+input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
 
@@ -85,6 +86,7 @@ shape = SubResource("CapsuleShape2D_6xr82")
 
 [node name="Helmet2" type="AnimatableBody2D" parent="." unique_id=1856798317]
 position = Vector2(859, 561)
+input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
 
@@ -97,6 +99,7 @@ shape = SubResource("CapsuleShape2D_6xr82")
 
 [node name="Helmet3" type="AnimatableBody2D" parent="." unique_id=1550548460]
 position = Vector2(679, 561)
+input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
 
@@ -109,6 +112,7 @@ shape = SubResource("CapsuleShape2D_6xr82")
 
 [node name="Helmet6" type="AnimatableBody2D" parent="." unique_id=1088920821]
 position = Vector2(1028, 561)
+input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
 
@@ -121,6 +125,7 @@ shape = SubResource("CapsuleShape2D_6xr82")
 
 [node name="Helmet4" type="AnimatableBody2D" parent="." unique_id=226210700]
 position = Vector2(474, 561)
+input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
 
@@ -133,6 +138,7 @@ shape = SubResource("CapsuleShape2D_6xr82")
 
 [node name="Helmet5" type="AnimatableBody2D" parent="." unique_id=521500164]
 position = Vector2(313, 561)
+input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
 
