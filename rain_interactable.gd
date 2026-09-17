@@ -37,6 +37,9 @@ func _input(event: InputEvent):
 	
 	if event is InputEventScreenTouch and pos_inside(event.position):
 		is_moved_by_finger = event.pressed
+		
+		if !is_moved_by_finger:
+			finger_index = -1
 	
 	if event is InputEventScreenDrag:
 		if is_moved_by_finger:
