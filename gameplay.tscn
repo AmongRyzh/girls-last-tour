@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dhqom0yjx7wxb" path="res://gameplay.gd" id="1_n4psk"]
 [ext_resource type="PackedScene" uid="uid://bv8rulpwbqdxy" path="res://rain_drop.tscn" id="2_ej4tk"]
 [ext_resource type="Texture2D" uid="uid://vexp7ieex81k" path="res://helmet.png" id="3_oe8ih"]
+[ext_resource type="Texture2D" uid="uid://c7hpl8vwxnuna" path="res://red-circle_23-2150588573_jpg.png" id="3_smepj"]
 [ext_resource type="Script" uid="uid://bwtgfe45te37a" path="res://rain_interactable.gd" id="3_xuee5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_njsjv"]
@@ -15,6 +16,48 @@ height = 88.0
 script = ExtResource("1_n4psk")
 rain_drop = ExtResource("2_ej4tk")
 rain_drop_timer = NodePath("RainDropTimer")
+
+[node name="IndicatorContainer" type="Node2D" parent="." unique_id=1320206751]
+
+[node name="Indicator0" type="Sprite2D" parent="IndicatorContainer" unique_id=2118518272]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator1" type="Sprite2D" parent="IndicatorContainer" unique_id=724394664]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator2" type="Sprite2D" parent="IndicatorContainer" unique_id=157576163]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator3" type="Sprite2D" parent="IndicatorContainer" unique_id=72643275]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator4" type="Sprite2D" parent="IndicatorContainer" unique_id=1270953260]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator5" type="Sprite2D" parent="IndicatorContainer" unique_id=1585445596]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator6" type="Sprite2D" parent="IndicatorContainer" unique_id=1939586509]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator7" type="Sprite2D" parent="IndicatorContainer" unique_id=2113955573]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator8" type="Sprite2D" parent="IndicatorContainer" unique_id=1245299700]
+visible = false
+texture = ExtResource("3_smepj")
+
+[node name="Indicator9" type="Sprite2D" parent="IndicatorContainer" unique_id=834462881]
+visible = false
+texture = ExtResource("3_smepj")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1997469708]
 position = Vector2(589, 597)

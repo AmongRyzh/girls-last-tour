@@ -5,11 +5,27 @@ extends Node2D
 
 @export var randomise_position : bool = true
 
+@onready var indicator_container = $IndicatorContainer
+var indicators = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for indicator in indicator_container.get_children():
+		indicators.append(indicator)
+	
 	print(get_viewport_rect().size.x)
 	
 	$RainDropTimer.timeout.connect(_spawn_rain_drop)
+
+func _input(event: InputEvent):
+	if event is InputEventScreenDrag:
+		var i = event.index
+		if i < indicators.size():
+			indicators[i].show()
+			indicators[i].global_position = event.position
+	if event is InputEventScreenTouch and not event.pressed:
+		var i = event.index
+		indicators[i].hide()
 
 func _spawn_rain_drop():
 	var min_pos_x : float = 100
