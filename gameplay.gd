@@ -8,6 +8,8 @@ extends Node2D
 @onready var indicator_container = $IndicatorContainer
 var indicators = []
 
+var occupied_finger_indexes : Array[int]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for indicator in indicator_container.get_children():
