@@ -6,6 +6,7 @@ class_name RainInteractable
 var all_sounds : Array[AudioStreamOggVorbis]
 
 var is_moved_by_finger : bool = false
+var finger_index := -1
 
 var mouse_inside : bool
 
@@ -39,7 +40,11 @@ func _input(event: InputEvent):
 	
 	if event is InputEventScreenDrag:
 		if is_moved_by_finger:
-			global_position = event.position
+			if finger_index == -1:
+				finger_index = event.index
+			
+			if finger_index == event.index:
+				global_position = event.position
 
 func pos_inside(pos: Vector2) -> bool:
 	var space_state = get_world_2d().direct_space_state
