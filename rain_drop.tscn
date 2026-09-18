@@ -3,12 +3,18 @@
 [ext_resource type="Script" uid="uid://wbgkfltf3c2l" path="res://rain_drop.gd" id="1_f2142"]
 [ext_resource type="Texture2D" uid="uid://dq6c8oyi0brxe" path="res://rain_drop.png" id="1_quavw"]
 
+[sub_resource type="Curve" id="Curve_f2142"]
+_limits = [0.6, 1.4, 0.0, 1000.0]
+_data = [Vector2(0, 1.4), 0.0, 0.0, 0, 0, Vector2(1000, 0.6), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4psk"]
 size = Vector2(12, 30)
 
 [node name="RainDrop" type="Area2D" unique_id=649751252]
 script = ExtResource("1_f2142")
 SPEED = 2600.0
+height_to_pitch_curve = SubResource("Curve_f2142")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1423423180]
 shape = SubResource("RectangleShape2D_n4psk")

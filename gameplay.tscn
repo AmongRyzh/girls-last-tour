@@ -16,6 +16,8 @@ height = 88.0
 script = ExtResource("1_n4psk")
 rain_drop = ExtResource("2_ej4tk")
 rain_drop_timer = NodePath("RainDropTimer")
+randomise_position = false
+position_list = Array[float]([313.0])
 
 [node name="IndicatorContainer" type="Node2D" parent="." unique_id=1320206751]
 

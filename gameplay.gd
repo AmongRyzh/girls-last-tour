@@ -4,6 +4,7 @@ extends Node2D
 @export var rain_drop_timer: Timer
 
 @export var randomise_position : bool = true
+@export var position_list : Array[float]
 
 @onready var indicator_container = $IndicatorContainer
 var indicators = []
@@ -32,7 +33,7 @@ func _input(event: InputEvent):
 func _spawn_rain_drop():
 	var min_pos_x : float = 100
 	var max_pos_x : float = get_viewport_rect().size.x - min_pos_x
-	var pos_x : float = randf_range(min_pos_x, max_pos_x)
+	var pos_x : float = randf_range(min_pos_x, max_pos_x) if randomise_position else position_list.pick_random()
 	
 	var new_drop = rain_drop.instantiate()
 	new_drop.global_position = Vector2(pos_x, -150)

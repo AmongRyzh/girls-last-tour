@@ -32,8 +32,8 @@ func _mouse_exit():
 	mouse_inside = false
 
 func _input(event: InputEvent):
-	if pos_inside(event.position):
-		print(name, ', _input(event), event = ', event)
+	#if pos_inside(event.position):
+		#print(name, ', _input(event), event = ', event)
 	
 	if event is InputEventScreenTouch and pos_inside(event.position):
 		is_moved_by_finger = event.pressed
@@ -47,7 +47,7 @@ func _input(event: InputEvent):
 			if finger_index == -1:
 				if event.index not in get_tree().current_scene.occupied_finger_indexes:
 					finger_index = event.index
-				get_tree().current_scene.occupied_finger_indexes.append(finger_index)
+					get_tree().current_scene.occupied_finger_indexes.append(finger_index)
 			
 			if finger_index == event.index:
 				global_position = event.position
