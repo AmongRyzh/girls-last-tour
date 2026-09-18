@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dq6c8oyi0brxe" path="res://rain_drop.png" id="1_quavw"]
 
 [sub_resource type="Curve" id="Curve_f2142"]
-_limits = [0.6, 1.4, 0.0, 1000.0]
-_data = [Vector2(0, 1.4), 0.0, 0.0, 0, 0, Vector2(1000, 0.6), 0.0, 0.0, 0, 0]
+_limits = [0.6, 2.0, 0.0, 1000.0]
+_data = [Vector2(0, 2), 0.0, 0.0, 0, 0, Vector2(694.118, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4psk"]

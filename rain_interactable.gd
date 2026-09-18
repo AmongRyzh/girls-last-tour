@@ -10,6 +10,9 @@ var finger_index := -1
 
 var mouse_inside : bool
 
+@export var middle_c_pos : float
+@export var dist_between_semitones : float
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	all_sounds = get_all_sounds(raindrop_sfx_directory)
@@ -30,6 +33,15 @@ func _mouse_enter():
 	mouse_inside = true
 func _mouse_exit():
 	mouse_inside = false
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_up"):
+		global_position.y -= dist_between_semitones
+	elif Input.is_action_just_pressed("ui_down"):
+		global_position.y += dist_between_semitones
+	
+	var current_semitone : int = roundi((middle_c_pos - global_position.y) / dist_between_semitones)
+	$"../NoteLabel".text = str(HitObject.Notes.keys()[wrapi(current_semitone, 0, 12)]) + "\n" + str(current_semitone) + "\n" + str(pow(2.0, current_semitone / 12.0))
 
 func _input(event: InputEvent):
 	#if pos_inside(event.position):

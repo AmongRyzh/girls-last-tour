@@ -15,10 +15,22 @@ run/main_scene="uid://cyr1e2sdl6g08"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/enable_input=true
+
+[autoload]
+
+PitchDetectorServer="*uid://56urrunlbiv2"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/note_detector/plugin.cfg")
 
 [input_devices]
 

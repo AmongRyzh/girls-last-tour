@@ -11,6 +11,11 @@ var indicators = []
 
 var occupied_finger_indexes : Array[int]
 
+#var current_semitone : int = 0 :
+	#set(value):
+		#current_semitone = value
+		#$NoteLabel.text = str(HitObject.Notes.keys()[wrapi(current_semitone, 0, 12)]) + "\n" + str(current_semitone) + "\n" + str(pow(2.0, current_semitone / 12.0))
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for indicator in indicator_container.get_children():

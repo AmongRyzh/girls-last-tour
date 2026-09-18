@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c7hpl8vwxnuna" path="res://red-circle_23-2150588573_jpg.png" id="3_smepj"]
 [ext_resource type="Script" uid="uid://bwtgfe45te37a" path="res://rain_interactable.gd" id="3_xuee5"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_njsjv"]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xr82"]
 radius = 27.0
 height = 88.0
@@ -18,6 +16,10 @@ rain_drop = ExtResource("2_ej4tk")
 rain_drop_timer = NodePath("RainDropTimer")
 randomise_position = false
 position_list = Array[float]([313.0])
+
+[node name="NoteLabel" type="Label" parent="." unique_id=1451570726]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="IndicatorContainer" type="Node2D" parent="." unique_id=1320206751]
 
@@ -61,88 +63,16 @@ texture = ExtResource("3_smepj")
 visible = false
 texture = ExtResource("3_smepj")
 
-[node name="Floor" type="StaticBody2D" parent="." unique_id=1997469708]
-position = Vector2(589, 597)
-script = ExtResource("3_xuee5")
-raindrop_sfx_directory = "res://raindrop_sfx/floor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=535874234]
-shape = SubResource("WorldBoundaryShape2D_njsjv")
-
 [node name="RainDropTimer" type="Timer" parent="." unique_id=778509474]
-wait_time = 0.125
 autostart = true
 
-[node name="Helmet" type="AnimatableBody2D" parent="." unique_id=680556947]
-position = Vector2(141, 561)
-input_pickable = true
-script = ExtResource("3_xuee5")
-raindrop_sfx_directory = "res://raindrop_sfx/helmet"
-
-[node name="Sprite2D" type="Sprite2D" parent="Helmet" unique_id=218830040]
-texture = ExtResource("3_oe8ih")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Helmet" unique_id=806141496]
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_6xr82")
-
-[node name="Helmet2" type="AnimatableBody2D" parent="." unique_id=1856798317]
-position = Vector2(859, 561)
-input_pickable = true
-script = ExtResource("3_xuee5")
-raindrop_sfx_directory = "res://raindrop_sfx/helmet"
-
-[node name="Sprite2D" type="Sprite2D" parent="Helmet2" unique_id=2077907144]
-texture = ExtResource("3_oe8ih")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Helmet2" unique_id=1705938373]
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_6xr82")
-
-[node name="Helmet3" type="AnimatableBody2D" parent="." unique_id=1550548460]
-position = Vector2(679, 561)
-input_pickable = true
-script = ExtResource("3_xuee5")
-raindrop_sfx_directory = "res://raindrop_sfx/helmet"
-
-[node name="Sprite2D" type="Sprite2D" parent="Helmet3" unique_id=564833596]
-texture = ExtResource("3_oe8ih")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Helmet3" unique_id=1763598474]
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_6xr82")
-
-[node name="Helmet6" type="AnimatableBody2D" parent="." unique_id=1088920821]
-position = Vector2(1028, 561)
-input_pickable = true
-script = ExtResource("3_xuee5")
-raindrop_sfx_directory = "res://raindrop_sfx/helmet"
-
-[node name="Sprite2D" type="Sprite2D" parent="Helmet6" unique_id=1895305016]
-texture = ExtResource("3_oe8ih")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Helmet6" unique_id=1860836692]
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_6xr82")
-
-[node name="Helmet4" type="AnimatableBody2D" parent="." unique_id=226210700]
-position = Vector2(474, 561)
-input_pickable = true
-script = ExtResource("3_xuee5")
-raindrop_sfx_directory = "res://raindrop_sfx/helmet"
-
-[node name="Sprite2D" type="Sprite2D" parent="Helmet4" unique_id=1620685315]
-texture = ExtResource("3_oe8ih")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Helmet4" unique_id=65255619]
-rotation = -1.5707964
-shape = SubResource("CapsuleShape2D_6xr82")
-
 [node name="Helmet5" type="AnimatableBody2D" parent="." unique_id=521500164]
-position = Vector2(313, 561)
+position = Vector2(313, 363)
 input_pickable = true
 script = ExtResource("3_xuee5")
 raindrop_sfx_directory = "res://raindrop_sfx/helmet"
+middle_c_pos = 363.0
+dist_between_semitones = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Helmet5" unique_id=645206827]
 texture = ExtResource("3_oe8ih")
@@ -150,3 +80,18 @@ texture = ExtResource("3_oe8ih")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Helmet5" unique_id=422833633]
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_6xr82")
+
+[node name="Label" type="Label" parent="Helmet5" unique_id=152129925]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1

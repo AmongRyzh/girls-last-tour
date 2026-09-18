@@ -16,7 +16,9 @@ func _on_body_entered(body):
 	if body is RainInteractable:
 		$AudioStreamPlayer2D.stream = body.all_sounds.pick_random()
 		$AudioStreamPlayer2D.finished.connect(queue_free)
-		$AudioStreamPlayer2D.pitch_scale = height_to_pitch_curve.sample(global_position.y)
+		var semitone : int = roundi((body.middle_c_pos - body.global_position.y) / body.dist_between_semitones)
+		$AudioStreamPlayer2D.pitch_scale = pow(2.0, semitone / 12.0)
+		#$AudioStreamPlayer2D.pitch_scale = height_to_pitch_curve.sample(global_position.y)
 		$AudioStreamPlayer2D.play()
 		visible = false
 		dead = true
