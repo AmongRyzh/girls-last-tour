@@ -11,6 +11,11 @@ var indicators = []
 
 var occupied_finger_indexes : Array[int]
 
+@export var time_scale : float = 1.0:
+	set(value):
+		time_scale = value
+		Engine.time_scale = time_scale
+
 #var current_semitone : int = 0 :
 	#set(value):
 		#current_semitone = value

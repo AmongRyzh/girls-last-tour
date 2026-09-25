@@ -10,8 +10,8 @@ var finger_index := -1
 
 var mouse_inside : bool
 
-@export var middle_c_pos : float
-@export var dist_between_semitones : float
+@export var middle_c_pos : float = 363.0
+@export var dist_between_semitones : float = 20.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,12 +36,13 @@ func _mouse_exit():
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up"):
-		global_position.y -= dist_between_semitones
+		global_position.y -= get_tree().get_first_node_in_group('beatmap_manager').dist_between_semitones
 	elif Input.is_action_just_pressed("ui_down"):
-		global_position.y += dist_between_semitones
+		global_position.y += get_tree().get_first_node_in_group('beatmap_manager').dist_between_semitones
 	
-	var current_semitone : int = roundi((middle_c_pos - global_position.y) / dist_between_semitones)
-	$"../NoteLabel".text = str(HitObject.Notes.keys()[wrapi(current_semitone, 0, 12)]) + "\n" + str(current_semitone) + "\n" + str(pow(2.0, current_semitone / 12.0))
+	var current_semitone : int = roundi((get_tree().get_first_node_in_group('beatmap_manager').middle_c_pos - global_position.y) / get_tree().get_first_node_in_group('beatmap_manager').dist_between_semitones)
+	var octave_num : float = (float(current_semitone) / 12) + 4
+	$"../NoteLabel".text = str(HitObject.Notes.keys()[wrapi(current_semitone, 0, 12)]) + str(floori(octave_num)) + "\n" + str(current_semitone) + "\n" + str(pow(2.0, current_semitone / 12.0))
 
 func _input(event: InputEvent):
 	#if pos_inside(event.position):

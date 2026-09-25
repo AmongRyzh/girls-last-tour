@@ -5,7 +5,8 @@ enum Notes {
 	C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B
 }
 
-@export_enum('0', '1', '2', '3', '4', '5', '6', '7') var octave : int
+@export_enum('0', '1', '2', '3', '4', '5', '6', '7') var octave : int = 4
 @export var note : Notes
 #@export var target_pos : Vector2
 @export var time : float
+@export var x_pos : float

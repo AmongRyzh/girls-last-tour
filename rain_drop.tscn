@@ -24,4 +24,13 @@ texture = ExtResource("1_quavw")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=528807360]
 
+[node name="Label" type="Label" parent="." unique_id=1191913976]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1375661436]
+position = Vector2(0, 8)
+target_position = Vector2(0, 32)
+collide_with_bodies = false
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

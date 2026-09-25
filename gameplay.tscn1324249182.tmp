@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c7hpl8vwxnuna" path="res://red-circle_23-2150588573_jpg.png" id="3_smepj"]
 [ext_resource type="Script" uid="uid://bwtgfe45te37a" path="res://rain_interactable.gd" id="3_xuee5"]
 [ext_resource type="Resource" uid="uid://cnqycrml5mdx6" path="res://beatmap_system/nothing_else_matters.tres" id="4_fbudy"]
-[ext_resource type="Script" uid="uid://d188rqyrurbtd" path="res://count_up.gd" id="8_0m7cd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2142"]
 size = Vector2(56, 100)
@@ -39,16 +38,6 @@ offset_bottom = 105.0
 offset_top = 105.0
 offset_right = 40.0
 offset_bottom = 128.0
-
-[node name="NoteLabel4" type="Label" parent="." unique_id=1756413612]
-offset_top = 128.0
-offset_right = 40.0
-offset_bottom = 151.0
-
-[node name="NoteLabel5" type="Label" parent="." unique_id=1434323855]
-offset_top = 151.0
-offset_right = 40.0
-offset_bottom = 174.0
 
 [node name="IndicatorContainer" type="Node2D" parent="." unique_id=1320206751]
 
@@ -121,11 +110,3 @@ grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="CountUp" type="Node2D" parent="." unique_id=1854661590]
-script = ExtResource("8_0m7cd")
-
-[node name="Label" type="Label" parent="CountUp" unique_id=1997804609]
-offset_left = 430.0
-offset_right = 470.0
-offset_bottom = 23.0

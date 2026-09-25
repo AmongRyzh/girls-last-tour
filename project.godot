@@ -30,7 +30,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/note_detector/plugin.cfg")
+enabled=PackedStringArray()
 
 [input_devices]
 
